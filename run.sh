@@ -88,13 +88,13 @@ PATCH_BT_LIB "$FIRM_DIR/$TARGET_DEVICE" "$WORK_DIR"
 
 B_ID="$(grep -m1 '^ro.system.build.id=' "$FIRM_DIR/$TARGET_DEVICE/system/system/build.prop" | cut -d= -f2 | tr -d '\r')"
 B_V="$(grep -m1 '^ro.system.build.version.incremental=' "$FIRM_DIR/$TARGET_DEVICE/system/system/build.prop" | cut -d= -f2 | tr -d '\r')"
-#BUILD_PROP "$FIRM_DIR/$TARGET_DEVICE" "system" "ro.build.display.id" "${B_ID} ${B_V} V-${VERSION}: Built with Quantum Tools"
-#BUILD_PROP "$FIRM_DIR/$TARGET_DEVICE" "product" "ro.build.display.id" "${B_ID} ${B_V} V-${VERSION}: Built with Quantum Tools"
+BUILD_PROP "$FIRM_DIR/$TARGET_DEVICE" "system" "ro.build.display.id" "By Sammy"
+BUILD_PROP "$FIRM_DIR/$TARGET_DEVICE" "product" "ro.build.display.id" "By Sammy"
 
 if [ -f "$FIRM_DIR/$TARGET_DEVICE/system/system/etc/floating_feature.xml" ]; then
-    sed -i 's/<SEC_FLOATING_FEATURE_SETTINGS_CONFIG_BRAND_NAME>.*<\/SEC_FLOATING_FEATURE_SETTINGS_CONFIG_BRAND_NAME>/<SEC_FLOATING_FEATURE_SETTINGS_CONFIG_BRAND_NAME>Galaxy S23 FE<\/SEC_FLOATING_FEATURE_SETTINGS_CONFIG_BRAND_NAME>/g' "$FIRM_DIR/$TARGET_DEVICE/system/system/etc/floating_feature.xml"
+    sed -i 's/<SEC_FLOATING_FEATURE_SETTINGS_CONFIG_BRAND_NAME>.*<\/SEC_FLOATING_FEATURE_SETTINGS_CONFIG_BRAND_NAME>/<SEC_FLOATING_FEATURE_SETTINGS_CONFIG_BRAND_NAME>Galaxy A34 5G<\/SEC_FLOATING_FEATURE_SETTINGS_CONFIG_BRAND_NAME>/g' "$FIRM_DIR/$TARGET_DEVICE/system/system/etc/floating_feature.xml"
 elif [ -f "$FIRM_DIR/$TARGET_DEVICE/system/etc/floating_feature.xml" ]; then
-    sed -i 's/<SEC_FLOATING_FEATURE_SETTINGS_CONFIG_BRAND_NAME>.*<\/SEC_FLOATING_FEATURE_SETTINGS_CONFIG_BRAND_NAME>/<SEC_FLOATING_FEATURE_SETTINGS_CONFIG_BRAND_NAME>Galaxy S23 FE<\/SEC_FLOATING_FEATURE_SETTINGS_CONFIG_BRAND_NAME>/g' "$FIRM_DIR/$TARGET_DEVICE/system/etc/floating_feature.xml"
+    sed -i 's/<SEC_FLOATING_FEATURE_SETTINGS_CONFIG_BRAND_NAME>.*<\/SEC_FLOATING_FEATURE_SETTINGS_CONFIG_BRAND_NAME>/<SEC_FLOATING_FEATURE_SETTINGS_CONFIG_BRAND_NAME>Galaxy A34 5G<\/SEC_FLOATING_FEATURE_SETTINGS_CONFIG_BRAND_NAME>/g' "$FIRM_DIR/$TARGET_DEVICE/system/etc/floating_feature.xml"
 fi
 
 BUILD_IMG "$FIRM_DIR/$TARGET_DEVICE" "all" "$OUTPUT_FILESYSTEM" "$OUT_DIR"
