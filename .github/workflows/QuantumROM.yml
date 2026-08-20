@@ -106,6 +106,8 @@ jobs:
 
       - name: Upload file in GoFile & Create Release.
         env:
+          GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }}
+          GH_TOKEN: ${{ secrets.GIT_TOKEN }}
           GIT_TOKEN: ${{ secrets.GIT_TOKEN }}
           STOCK_DEVICE: ${{ github.event.inputs.STOCK_DEVICE }}
           TARGET_DEVICE: ${{ github.event.inputs.TARGET_DEVICE }}
