@@ -49,12 +49,12 @@ SAMSUNG_APPS=(
 
 
 # SAMSUNG AI / SMART
-#SAMSUNG_AI=(
-#"LiveTranscribe" "Bixby" "BixbyInterpreter"
-#"BixbyVisionFramework3.5" "SettingsBixby"
-#"SmartEye" "SmartPush" "SmartPush_64"
-#"SmartThingsKit" "SmartTouchCall"
-#"VisionIntelligence3.7"
+SAMSUNG_AI=(
+"LiveTranscribe" "Bixby" "BixbyInterpreter"
+"BixbyVisionFramework3.5" "SettingsBixby"
+"SmartEye" "SmartPush" "SmartPush_64"
+"SmartThingsKit" "SmartTouchCall"
+"VisionIntelligence3.7"
 )
 
 
