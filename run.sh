@@ -98,6 +98,8 @@ BUILD_PROP "$FIRM_DIR/$TARGET_DEVICE" "product" "ro.product.model" "$NEW_MODEL"
 BUILD_PROP "$FIRM_DIR/$TARGET_DEVICE" "product" "ro.product.product.model" "$NEW_MODEL"
 BUILD_PROP "$FIRM_DIR/$TARGET_DEVICE" "system_ext" "ro.product.model" "$NEW_MODEL"
 BUILD_PROP "$FIRM_DIR/$TARGET_DEVICE" "system_ext" "ro.product.system_ext.model" "$NEW_MODEL"
+BUILD_PROP "$FIRM_DIR/$TARGET_DEVICE" "vendor" "ro.product.model" "$NEW_MODEL"
+BUILD_PROP "$FIRM_DIR/$TARGET_DEVICE" "vendor" "ro.product.vendor.model" "$NEW_MODEL"
 
 if [ -f "$FIRM_DIR/$TARGET_DEVICE/system/system/etc/floating_feature.xml" ]; then
     sed -i 's/<SEC_FLOATING_FEATURE_SETTINGS_CONFIG_BRAND_NAME>.*<\/SEC_FLOATING_FEATURE_SETTINGS_CONFIG_BRAND_NAME>/<SEC_FLOATING_FEATURE_SETTINGS_CONFIG_BRAND_NAME>Galaxy A34 5G<\/SEC_FLOATING_FEATURE_SETTINGS_CONFIG_BRAND_NAME>/g' "$FIRM_DIR/$TARGET_DEVICE/system/system/etc/floating_feature.xml"
