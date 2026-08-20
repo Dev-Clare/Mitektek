@@ -35,16 +35,16 @@ CARRIER_APPS=(
 
 
 # SAMSUNG FEATURES / APPS
-#SAMSUNG_APPS=(
-#"SamsungCalendar" "SamsungTTS" "SamsungBilling"
-#"OneDrive_Samsung_v3" "SamsungCarKeyFw"
-#"SamsungPass" "SamsungSmartSuggestions"
-#"SamsungPassAutofill_v1"
-#"AirCommand" "AppUpdateCenter" "AREmoji"
-#"AREmojiEditor" "AutoDoodle" "AvatarEmojiSticker"
-#"AvatarEmojiSticker_S" "AvatarPicker"
-#"GalleryWidget" "LiveStickers" "StoryService"
-#"StickerFaceARAvatar" "sticker"
+SAMSUNG_APPS=(
+"SamsungCalendar" "SamsungTTS" "SamsungBilling"
+"OneDrive_Samsung_v3" "SamsungCarKeyFw"
+"SamsungPass" 
+"SamsungPassAutofill_v1"
+"AirCommand" "AppUpdateCenter" "AREmoji"
+"AREmojiEditor" "AutoDoodle" "AvatarEmojiSticker"
+"AvatarEmojiSticker_S" "AvatarPicker"
+"GalleryWidget" "LiveStickers" "StoryService"
+"StickerFaceARAvatar" "sticker"
 )
 
 
