@@ -14,7 +14,7 @@ on:
       TARGET_DEVICE:
         description: "TARGET_DEVICE_MODEL."
         required: true
-        default: "SM-S711B"
+        default: "SM-A346E"
       TARGET_DEVICE_CSC:
         description: "TARGET_DEVICE_CSC."
         required: true
