@@ -57,13 +57,13 @@ SAMSUNG_AI=(
 "SmartThingsKit" "SmartTouchCall"
 )
 
-# GOOGLE APPS
+# GOOGLE APPS (Samsung Messages diamankan, Google Messages dibidik via package name spesifik)
 GOOGLE_APPS=(
 "SpeechServicesByGoogle" "Maps" "Duo" "Photos"
 "AssistantShell" "BardShell" "DuoStub"
 "GoogleCalendarSyncAdapter" "GoogleRestore" "PlayAutoInstallConfig"
 "YourPhone_Stub" "AndroidAutoStub" "FamilyLinkParentalControls"
-"YouTube" "Gmail2" "Chrome" "Messages"
+"YouTube" "Gmail2" "Chrome" "com.google.android.apps.messaging"
 )
 
 # FACEBOOK
@@ -234,4 +234,17 @@ DEBLOAT() {
     rm -rf "$EXTRACTED_FIRM_DIR/product/app/SpeechServicesByGoogle/oat"
     rm -rf "$EXTRACTED_FIRM_DIR/product/app/YouTube/oat"
     rm -rf "$EXTRACTED_FIRM_DIR/product/priv-app"/HotwordEnrollment*
+
+    # --- PEMBERSIHAN MUTLAK PRISM & OMC CONFIG ---
+    echo -e "- Purging stubborn Prism apps and OMC configs..."
+    rm -rf "$EXTRACTED_FIRM_DIR/prism/priv-app/GPT_SamsungPay"*
+    rm -rf "$EXTRACTED_FIRM_DIR/prism/priv-app/SGI-"*
+    rm -rf "$EXTRACTED_FIRM_DIR/prism/priv-app/appcloud_oobe"*
+
+    for app in appcloud_oobe SGI SamsungGift SamsungPay AppRecs AppStation lazada; do
+        find "$EXTRACTED_FIRM_DIR" -type d -iname "*$app*" -exec rm -rf {} + 2>/dev/null
+    done
+
+    find "$EXTRACTED_FIRM_DIR" -type f -name "SW-Configuration.xml" -exec sed -i '/<package name="com.lazada.android" \/>/d' {} + 2>/dev/null
+    find "$EXTRACTED_FIRM_DIR" -type f -name "SW-Configuration.xml" -exec sed -i '/<package name="com.srin./d' {} + 2>/dev/null
 }
