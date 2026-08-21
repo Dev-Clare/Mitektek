@@ -32,6 +32,7 @@ CARRIER_APPS=(
 )
 
 # SAMSUNG APPS (Bisa didownload ulang lewat Galaxy Store)
+# Samsung Health, DressRoom, Bixby, dll DIBIARKAN UTUH
 SAMSUNG_APPS=(
 "SamsungCalendar" "SamsungTTS" "SecClock" "SecCalculator" "ClockPackage" "PopupCalculator"
 "OneDrive_Samsung_v3" 
@@ -42,10 +43,10 @@ SAMSUNG_APPS=(
 "AvatarEmojiSticker_S" "AvatarPicker"
 "GalleryWidget" "LiveStickers" "StoryService"
 "StickerFaceARAvatar" "sticker" "SamsungPay"
-"SamsungGiftIndonesia" "srinindramayu" "AppRecs"
-"PaymentFramework"
+"SamsungGiftIndonesia" "srinindramayu" "com.srin.indramayu" "AppRecs"
 "GPT_SamsungPay_issuerprod_release_v24100_1901"
-"SamsungOne" "GothicBold" "Roboto" "Chococooky" "Rosemary"
+"SamsungOne" "com.monotype.android.font.samsungOne" "com.monotype.android.font.samsungone" "com.monotype.android.font.foundation" "GothicBold" "Roboto" "com.monotype.android.font.roboto" "Chococooky" "Rosemary"
+"appcloud_oobe_samsungGlobal_BaseVersion_V6.0.0.2" "com.aura.oobe.samsung.gl"
 )
 
 # SAMSUNG AI / SMART (Bixby & Vision Intelligence aman dipertahankan)
@@ -220,6 +221,10 @@ DEBLOAT() {
     rm -rf "$EXTRACTED_FIRM_DIR/prism/priv-app"/appcloud*
     rm -rf "$EXTRACTED_FIRM_DIR/product/app"/srinindramayu*
     rm -rf "$EXTRACTED_FIRM_DIR/system/system/app"/srinindramayu*
+    rm -rf "$EXTRACTED_FIRM_DIR/prism/priv-app"/appcloud*
+    rm -rf "$EXTRACTED_FIRM_DIR/product/priv-app"/appcloud*
+    rm -rf "$EXTRACTED_FIRM_DIR/system/system/priv-app"/appcloud*
+    rm -rf "$EXTRACTED_FIRM_DIR/prism/priv-app/SGI-5.0-1910000083.apk"
     rm -rf "$EXTRACTED_FIRM_DIR/system/system/etc/init/boot-image.bprof"
     rm -rf "$EXTRACTED_FIRM_DIR/system/system/etc/init/boot-image.prof"
     rm -rf "$EXTRACTED_FIRM_DIR/system/system/hidden"
