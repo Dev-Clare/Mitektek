@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# GENERAL / SYSTEM / BLOAT
+# GENERAL / SYSTEM / BLOAT (FactoryTestProvider dikeluarkan agar *#06# aman)
 DEBLOAT_APPS=(
 "DigitalWellbeing" "FactoryCameraFB"
 "WlanTest" "AirGlance" "AirReadingGlass" "AndroidGlassesCore"
@@ -13,7 +13,7 @@ DEBLOAT_APPS=(
 "ParentalCare" "PhotoTable" "SmartReminder" "SmartSwitchStub"
 "UnifiedWFC" "UniversalMDMClient" "VideoEditorLite_Dream_N"
 "VoiceAccess" "VTCameraSetting"
-"WebManual" "WifiGuider" "AutomationTest_FB" "FactoryTestProvider"
+"WebManual" "WifiGuider" "AutomationTest_FB"
 "StickerCenter" "CIDManager" "FacAtFunction" "serviceModeApp_FB"
 )
 
@@ -102,14 +102,14 @@ REMOVE_ESIM_FILES() {
     fi
 
     local EXTRACTED_FIRM_DIR="$1"
-    echo -e "- Removing ESIM files."
+    echo -e "- Removing ESIM files (EsimKeyString kept for *#06# popup)."
     rm -rf "$EXTRACTED_FIRM_DIR/system/system/etc/autoinstalls/autoinstalls-com.google.android.euicc"
     rm -rf "$EXTRACTED_FIRM_DIR/system/system/etc/default-permissions/default-permissions-com.google.android.euicc.xml"
     rm -rf "$EXTRACTED_FIRM_DIR/system/system/etc/permissions/privapp-permissions-com.samsung.euicc.xml"
     rm -rf "$EXTRACTED_FIRM_DIR/system/system/etc/permissions/privapp-permissions-com.samsung.android.app.esimkeystring.xml"
     rm -rf "$EXTRACTED_FIRM_DIR/system/system/etc/permissions/privapp-permissions-com.samsung.android.app.telephonyui.esimclient.xml"
     rm -rf "$EXTRACTED_FIRM_DIR/system/system/priv-app/EsimClient"
-    rm -rf "$EXTRACTED_FIRM_DIR/system/system/priv-app/EsimKeyString"
+    # EsimKeyString TIDAK DIHAPUS agar handler *#06# tetep jalan normal
     rm -rf "$EXTRACTED_FIRM_DIR/system/system/priv-app/EuiccService"
     rm -rf "$EXTRACTED_FIRM_DIR/system/system/priv-app/EuiccGoogle"
 }
@@ -192,6 +192,7 @@ DEBLOAT() {
     KICK "$EXTRACTED_FIRM_DIR" "${FACEBOOK_APPS[@]}"
     KICK "$EXTRACTED_FIRM_DIR" "${HARDWARE_DRIVERS[@]}"
     KICK "$EXTRACTED_FIRM_DIR" "${MISC_SERVICES[@]}"
+    REMOVE_ESIM_FILES "$EXTRACTED_FIRM_DIR"
     REMOVE_FABRIC_CRYPTO "$EXTRACTED_FIRM_DIR"
 
     echo -e "- Deleting unnecessary files and folders."
