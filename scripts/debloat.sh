@@ -31,8 +31,7 @@ CARRIER_APPS=(
 "UsimRegistrationKOR" "HpsAgreement_new" "KTAuth_Stub"
 )
 
-# SAMSUNG APPS (Bisa didownload ulang lewat Galaxy Store)
-# Samsung Health, DressRoom, Bixby, dll DIBIARKAN UTUH
+# SAMSUNG APPS (Termasuk target folder prism & system kamu)
 SAMSUNG_APPS=(
 "SamsungCalendar" "SamsungTTS" "SecClock" "SecCalculator" "ClockPackage" "PopupCalculator"
 "OneDrive_Samsung_v3" 
@@ -47,16 +46,18 @@ SAMSUNG_APPS=(
 "GPT_SamsungPay_issuerprod_release_v24100_1901"
 "SamsungOne" "com.monotype.android.font.samsungone" "com.monotype.android.font.foundation" "GothicBold" "Roboto" "com.monotype.android.font.roboto" "Chococooky" "Rosemary"
 "appcloud_oobe_samsungGlobal_BaseVersion_V6.0.0.2" "com.aura.oobe.samsung.gl"
+"Foundation"
+"SGI-5.0-1910000083"
 )
 
-# SAMSUNG AI / SMART (Bixby & Vision Intelligence aman dipertahankan)
+# SAMSUNG AI / SMART
 SAMSUNG_AI=(
 "LiveTranscribe" 
 "SmartEye" "SmartPush" "SmartPush_64"
 "SmartThingsKit" "SmartTouchCall"
 )
 
-# GOOGLE APPS (Disikat habis termasuk Google Messages, kalender, dll)
+# GOOGLE APPS
 GOOGLE_APPS=(
 "SpeechServicesByGoogle" "Maps" "Duo" "Photos"
 "AssistantShell" "BardShell" "DuoStub"
@@ -76,7 +77,7 @@ HARDWARE_DRIVERS=(
 "GameDriver-EX2100" "GameDriver-EX2200" "GameDriver-SM8150"
 )
 
-# MISC / SERVICES (Keyboard, AuthFramework, dan sistem vital tetap aman)
+# MISC / SERVICES
 MISC_SERVICES=(
 "Discover" "DiscoverSEP"
 "EarphoneTypeC" "EasySetup" "FotaAgent"
@@ -91,10 +92,8 @@ MISC_SERVICES=(
 "UltraDataSaving_O" "Upday"
 "YourPhone_P1_5" "DsmsAPK"
 "vexfwk_service" "VexScanner"
-"LiveEffectService" "MyGalaxyService"
+"LiveGalaxyService"
 )
-
-# Knox - AMAN / TIDAK DIHAPUS
 
 REMOVE_ESIM_FILES() {
     if [ "$#" -ne 1 ]; then
@@ -160,10 +159,8 @@ KICK() {
 
     for app in "${APPS_LIST[@]}"; do
         for dir in "${APP_DIRS[@]}"; do
-            target="$dir/$app"
-
-            if [[ -d "$target" ]]; then
-                rm -rf "$target" || echo -e "[WARN] Failed to delete $target"
+            if [[ -d "$dir" ]]; then
+                find "$dir" -maxdepth 1 -type d -iname "*$app*" -exec rm -rf {} + 2>/dev/null
             fi
         done
     done
@@ -221,7 +218,6 @@ DEBLOAT() {
     rm -rf "$EXTRACTED_FIRM_DIR/prism/priv-app"/appcloud*
     rm -rf "$EXTRACTED_FIRM_DIR/product/priv-app"/appcloud*
     rm -rf "$EXTRACTED_FIRM_DIR/system/system/priv-app"/appcloud*
-    rm -rf "$EXTRACTED_FIRM_DIR/prism/priv-app/SGI-5.0-1910000083.apk"
     rm -rf "$EXTRACTED_FIRM_DIR/system/system/etc/init/boot-image.bprof"
     rm -rf "$EXTRACTED_FIRM_DIR/system/system/etc/init/boot-image.prof"
     rm -rf "$EXTRACTED_FIRM_DIR/system/system/hidden"
