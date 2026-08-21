@@ -31,13 +31,13 @@ CARRIER_APPS=(
 "UsimRegistrationKOR" "HpsAgreement_new" "KTAuth_Stub"
 )
 
-# SAMSUNG APPS (Termasuk target folder prism & system kamu)
+# SAMSUNG APPS (Termasuk target folder prism & system kamu. AppUpdateCenter dikeluarkan agar menu One UI bisa diklik)
 SAMSUNG_APPS=(
 "SamsungCalendar" "SamsungTTS" "SecClock" "SecCalculator" "ClockPackage" "PopupCalculator"
 "OneDrive_Samsung_v3" 
 "SamsungPass" 
 "SamsungPassAutofill_v1"
-"AirCommand" "AppUpdateCenter" "AREmoji"
+"AirCommand" "AREmoji"
 "AREmojiEditor" "AutoDoodle" "AvatarEmojiSticker"
 "AvatarEmojiSticker_S" "AvatarPicker"
 "GalleryWidget" "LiveStickers" "StoryService"
@@ -77,17 +77,17 @@ HARDWARE_DRIVERS=(
 "GameDriver-EX2100" "GameDriver-EX2200" "GameDriver-SM8150"
 )
 
-# MISC / SERVICES
+# MISC / SERVICES (FotaAgent & SystemUpdate dikeluarkan agar info Versi One UI normal)
 MISC_SERVICES=(
 "Discover" "DiscoverSEP"
-"EarphoneTypeC" "EasySetup" "FotaAgent"
+"EarphoneTypeC" "EasySetup"
 "HashTagService" "LedCoverService"
 "LinkToWindowsService" "MemorySaver_O_Refresh"
 "MultiControl" "MultiControlVP6"
 "OneStoreService" "FactoryAirCommandManager"
 "SolarAudio-service" "SPPPushClient"
 "SumeNNService" "SVoiceIME"
-"SystemUpdate" "TADownloader"
+"TADownloader"
 "TalkbackSE" "TalkBack" "TaPackAuthFw"
 "UltraDataSaving_O" "Upday"
 "YourPhone_P1_5" "DsmsAPK"
