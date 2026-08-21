@@ -42,9 +42,10 @@ SAMSUNG_APPS=(
 "AvatarEmojiSticker_S" "AvatarPicker"
 "GalleryWidget" "LiveStickers" "StoryService"
 "StickerFaceARAvatar" "sticker" "SamsungPay"
-"SamsungGiftIndonesia" "AppRecs"
+"SamsungGiftIndonesia" "srinindramayu" "AppRecs"
 "PaymentFramework"
 "GPT_SamsungPay_issuerprod_release_v24100_1901"
+"SamsungOne" "GothicBold" "Roboto" "Chococooky" "Rosemary"
 )
 
 # SAMSUNG AI / SMART (Bixby & Vision Intelligence aman dipertahankan)
@@ -109,9 +110,6 @@ REMOVE_ESIM_FILES() {
     rm -rf "$EXTRACTED_FIRM_DIR/system/system/etc/permissions/privapp-permissions-com.samsung.euicc.xml"
     rm -rf "$EXTRACTED_FIRM_DIR/system/system/etc/permissions/privapp-permissions-com.samsung.android.app.esimkeystring.xml"
     rm -rf "$EXTRACTED_FIRM_DIR/system/system/etc/permissions/privapp-permissions-com.samsung.android.app.telephonyui.esimclient.xml"
-    rm -rf "$EXTRACTED_FIRM_DIR/system/system/etc/privapp-permissions-com.samsung.android.app.telephonyui.esimclient.xml"
-    rm -rf "$EXTRACTED_FIRM_DIR/system/system/etc/sysconfig/preinstalled-packages-com.samsung.euicc.xml"
-    rm -rf "$EXTRACTED_FIRM_DIR/system/system/etc/sysconfig/preinstalled-packages-com.samsung.android.app.esimkeystring.xml"
     rm -rf "$EXTRACTED_FIRM_DIR/system/system/priv-app/EsimClient"
     rm -rf "$EXTRACTED_FIRM_DIR/system/system/priv-app/EsimKeyString"
     rm -rf "$EXTRACTED_FIRM_DIR/system/system/priv-app/EuiccService"
@@ -205,10 +203,23 @@ DEBLOAT() {
     rm -rf "$EXTRACTED_FIRM_DIR/system/system/app"/SamsungTTS*
     rm -rf "$EXTRACTED_FIRM_DIR/system/system/app"/SecClock*
     rm -rf "$EXTRACTED_FIRM_DIR/system/system/app"/SecCalculator*
+    rm -rf "$EXTRACTED_FIRM_DIR/system/system/app"/SamsungOne*
+    rm -rf "$EXTRACTED_FIRM_DIR/system/system/app"/GothicBold*
+    rm -rf "$EXTRACTED_FIRM_DIR/system/system/app"/Roboto*
     rm -rf "$EXTRACTED_FIRM_DIR/system/system/priv-app"/SecClock*
     rm -rf "$EXTRACTED_FIRM_DIR/system/system/priv-app"/SecCalculator*
+    rm -rf "$EXTRACTED_FIRM_DIR/system/system/priv-app"/SamsungOne*
+    rm -rf "$EXTRACTED_FIRM_DIR/system/system/priv-app"/GothicBold*
+    rm -rf "$EXTRACTED_FIRM_DIR/system/system/priv-app"/Roboto*
     rm -rf "$EXTRACTED_FIRM_DIR/product/app"/SecClock*
     rm -rf "$EXTRACTED_FIRM_DIR/product/app"/SecCalculator*
+    rm -rf "$EXTRACTED_FIRM_DIR/product/app"/SamsungOne*
+    rm -rf "$EXTRACTED_FIRM_DIR/product/app"/GothicBold*
+    rm -rf "$EXTRACTED_FIRM_DIR/product/app"/Roboto*
+    rm -rf "$EXTRACTED_FIRM_DIR/prism/app"/srinindramayu*
+    rm -rf "$EXTRACTED_FIRM_DIR/prism/priv-app"/appcloud*
+    rm -rf "$EXTRACTED_FIRM_DIR/product/app"/srinindramayu*
+    rm -rf "$EXTRACTED_FIRM_DIR/system/system/app"/srinindramayu*
     rm -rf "$EXTRACTED_FIRM_DIR/system/system/etc/init/boot-image.bprof"
     rm -rf "$EXTRACTED_FIRM_DIR/system/system/etc/init/boot-image.prof"
     rm -rf "$EXTRACTED_FIRM_DIR/system/system/hidden"
