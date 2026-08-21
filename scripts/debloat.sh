@@ -43,6 +43,8 @@ SAMSUNG_APPS=(
 "GalleryWidget" "LiveStickers" "StoryService"
 "StickerFaceARAvatar" "sticker" "SamsungPay"
 "SamsungGiftIndonesia" "AppRecs"
+"PaymentFramework"
+"GPT_SamsungPay_issuerprod_release_v24100_1901"
 )
 
 # SAMSUNG AI / SMART (Bixby & Vision Intelligence aman dipertahankan)
@@ -148,11 +150,16 @@ KICK() {
     shift
     local APPS_LIST=("$@")
 
+    # DIPERLUAS: Partisi prism, optics, dan vendor ikut disapu
     local APP_DIRS=(
         "$EXTRACTED_FIRM_DIR/system/system/app"
         "$EXTRACTED_FIRM_DIR/system/system/priv-app"
         "$EXTRACTED_FIRM_DIR/product/app"
         "$EXTRACTED_FIRM_DIR/product/priv-app"
+        "$EXTRACTED_FIRM_DIR/prism/app"
+        "$EXTRACTED_FIRM_DIR/prism/priv-app"
+        "$EXTRACTED_FIRM_DIR/optics/app"
+        "$EXTRACTED_FIRM_DIR/vendor/app"
     )
 
     for app in "${APPS_LIST[@]}"; do
