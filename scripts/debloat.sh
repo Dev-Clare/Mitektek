@@ -1,12 +1,12 @@
 #!/bin/bash
 
-# GENERAL / SYSTEM / BLOAT (FactoryTestProvider dikeluarkan agar *#06# aman)
+# GENERAL / SYSTEM / BLOAT (FactoryCameraFB, WlanTest, Cameralyzer, serviceModeApp_FB diamankan agar *#0# tidak Force Close)
 DEBLOAT_APPS=(
-"DigitalWellbeing" "FactoryCameraFB"
-"WlanTest" "AirGlance" "AirReadingGlass" "AndroidGlassesCore"
+"DigitalWellbeing"
+"AirGlance" "AirReadingGlass" "AndroidGlassesCore"
 "SOAgent77" "ARCore" "ARDrawing" "ARZone" "BGMProvider"
 "SingleTakeService" "BlockchainBasicKit"
-"Cameralyzer" "DictDiotekForSec" "EasymodeContactsWidget81"
+"DictDiotekForSec" "EasymodeContactsWidget81"
 "Fast" "FunModeSDK" "GearManagerStub" "KidsHome_Installer"
 "LinkSharing_v11" "LiveDrawing" "MAPSAgent" "MdecService"
 "MinusOnePage" "MoccaMobile" "Netflix_stub" "Notes40"
@@ -14,7 +14,7 @@ DEBLOAT_APPS=(
 "UnifiedWFC" "UniversalMDMClient" "VideoEditorLite_Dream_N"
 "VoiceAccess" "VTCameraSetting"
 "WebManual" "WifiGuider" "AutomationTest_FB"
-"StickerCenter" "CIDManager" "FacAtFunction" "serviceModeApp_FB"
+"StickerCenter" "CIDManager" "FacAtFunction"
 )
 
 # KOREAN / CARRIER APPS
