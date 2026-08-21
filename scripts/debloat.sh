@@ -2,7 +2,7 @@
 
 # GENERAL / SYSTEM / BLOAT
 DEBLOAT_APPS=(
-"HMT" "DigitalWellbeing" "FactoryCameraFB"
+"DigitalWellbeing" "FactoryCameraFB"
 "WlanTest" "AirGlance" "AirReadingGlass" "AndroidGlassesCore"
 "SOAgent77" "ARCore" "ARDrawing" "ARZone" "BGMProvider"
 "SingleTakeService" "BlockchainBasicKit"
@@ -83,8 +83,7 @@ MISC_SERVICES=(
 "HashTagService" "LedCoverService"
 "LinkToWindowsService" "MemorySaver_O_Refresh"
 "MultiControl" "MultiControlVP6"
-"OMCAgent5" "OneStoreService" "FactoryAirCommandManager"
-"SOAgent7" "SOAgent75" "SOAgent76"
+"OneStoreService" "FactoryAirCommandManager"
 "SolarAudio-service" "SPPPushClient"
 "SumeNNService" "SVoiceIME"
 "SystemUpdate" "TADownloader"
@@ -95,8 +94,7 @@ MISC_SERVICES=(
 "LiveEffectService" "MyGalaxyService"
 )
 
-# Knox
-KNOX_APPS=("Rampart" "KnoxFrameBufferProvider")
+# Knox - AMAN / TIDAK DIHAPUS
 
 REMOVE_ESIM_FILES() {
     if [ "$#" -ne 1 ]; then
@@ -197,7 +195,6 @@ DEBLOAT() {
     KICK "$EXTRACTED_FIRM_DIR" "${FACEBOOK_APPS[@]}"
     KICK "$EXTRACTED_FIRM_DIR" "${HARDWARE_DRIVERS[@]}"
     KICK "$EXTRACTED_FIRM_DIR" "${MISC_SERVICES[@]}"
-    KICK "$EXTRACTED_FIRM_DIR" "${KNOX_APPS[@]}"
     REMOVE_FABRIC_CRYPTO "$EXTRACTED_FIRM_DIR"
 
     echo -e "- Deleting unnecessary files and folders."
