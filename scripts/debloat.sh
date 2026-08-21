@@ -34,8 +34,8 @@ CARRIER_APPS=(
 # SAMSUNG APPS (Termasuk target folder prism & system kamu. AppUpdateCenter dikeluarkan agar menu One UI bisa diklik)
 SAMSUNG_APPS=(
 "SamsungCalendar" "SamsungTTS" "SecClock" "SecCalculator" "ClockPackage" "PopupCalculator"
-"OneDrive_Samsung_v3" 
-"SamsungPass" 
+"OneDrive_Samsung_v3"
+"SamsungPass"
 "SamsungPassAutofill_v1"
 "AirCommand" "AREmoji"
 "AREmojiEditor" "AutoDoodle" "AvatarEmojiSticker"
@@ -52,7 +52,7 @@ SAMSUNG_APPS=(
 
 # SAMSUNG AI / SMART
 SAMSUNG_AI=(
-"LiveTranscribe" 
+"LiveTranscribe"
 "SmartEye" "SmartPush" "SmartPush_64"
 "SmartThingsKit" "SmartTouchCall"
 )
@@ -223,6 +223,7 @@ DEBLOAT() {
     rm -rf "$EXTRACTED_FIRM_DIR/system/system/etc/init/boot-image.prof"
     rm -rf "$EXTRACTED_FIRM_DIR/system/system/hidden"
     rm -rf "$EXTRACTED_FIRM_DIR/system/system/preload"
+    rm -rf "$EXTRACTED_FGCC_DIR/system/system/etc/mediasearch" 2>/dev/null
     rm -rf "$EXTRACTED_FIRM_DIR/system/system/etc/mediasearch"
     rm -rf "$EXTRACTED_FIRM_DIR/system/system/priv-app/MediaSearch"
     rm -rf "$EXTRACTED_FIRM_DIR/system/system/priv-app"/GameDriver-*
