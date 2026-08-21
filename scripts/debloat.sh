@@ -45,7 +45,7 @@ SAMSUNG_APPS=(
 "StickerFaceARAvatar" "sticker" "SamsungPay"
 "SamsungGiftIndonesia" "srinindramayu" "com.srin.indramayu" "AppRecs"
 "GPT_SamsungPay_issuerprod_release_v24100_1901"
-"SamsungOne" "com.monotype.android.font.samsungOne" "com.monotype.android.font.samsungone" "com.monotype.android.font.foundation" "GothicBold" "Roboto" "com.monotype.android.font.roboto" "Chococooky" "Rosemary"
+"SamsungOne" "com.monotype.android.font.samsungone" "com.monotype.android.font.foundation" "GothicBold" "Roboto" "com.monotype.android.font.roboto" "Chococooky" "Rosemary"
 "appcloud_oobe_samsungGlobal_BaseVersion_V6.0.0.2" "com.aura.oobe.samsung.gl"
 )
 
