@@ -33,7 +33,7 @@ CARRIER_APPS=(
 
 # SAMSUNG APPS (Bisa didownload ulang lewat Galaxy Store)
 SAMSUNG_APPS=(
-"SamsungCalendar" "SamsungTTS" "Clock" "Calculator"
+"SamsungCalendar" "SamsungTTS" "SecClock" "SecCalculator" "ClockPackage" "PopupCalculator"
 "OneDrive_Samsung_v3" 
 "SamsungPass" 
 "SamsungPassAutofill_v1"
@@ -150,7 +150,6 @@ KICK() {
     shift
     local APPS_LIST=("$@")
 
-    # DIPERLUAS: Partisi prism, optics, dan vendor ikut disapu
     local APP_DIRS=(
         "$EXTRACTED_FIRM_DIR/system/system/app"
         "$EXTRACTED_FIRM_DIR/system/system/priv-app"
@@ -204,6 +203,12 @@ DEBLOAT() {
 
     echo -e "- Deleting unnecessary files and folders."
     rm -rf "$EXTRACTED_FIRM_DIR/system/system/app"/SamsungTTS*
+    rm -rf "$EXTRACTED_FIRM_DIR/system/system/app"/SecClock*
+    rm -rf "$EXTRACTED_FIRM_DIR/system/system/app"/SecCalculator*
+    rm -rf "$EXTRACTED_FIRM_DIR/system/system/priv-app"/SecClock*
+    rm -rf "$EXTRACTED_FIRM_DIR/system/system/priv-app"/SecCalculator*
+    rm -rf "$EXTRACTED_FIRM_DIR/product/app"/SecClock*
+    rm -rf "$EXTRACTED_FIRM_DIR/product/app"/SecCalculator*
     rm -rf "$EXTRACTED_FIRM_DIR/system/system/etc/init/boot-image.bprof"
     rm -rf "$EXTRACTED_FIRM_DIR/system/system/etc/init/boot-image.prof"
     rm -rf "$EXTRACTED_FIRM_DIR/system/system/hidden"
